@@ -1,94 +1,94 @@
-# React
+# StruMind - Structural Analysis Web Application
 
-A modern React-based project utilizing the latest frontend technologies and tools for building responsive web applications.
+StruMind is a web-based structural analysis application inspired by StaadPro. It provides a comprehensive set of tools for structural engineers to model, analyze, and design structures.
 
 ## 🚀 Features
 
-- **React 18** - React version with improved rendering and concurrent features
-- **Vite** - Lightning-fast build tool and development server
+- **Project Management**: Create, manage, and organize structural projects
+- **3D Structural Modeling**: Create and edit structural models with nodes, beams, plates, and more
+- **Analysis Setup**: Configure load cases, load combinations, and analysis parameters
+- **Analysis Engine**: Perform static, modal, and other types of structural analysis
+- **Results Visualization**: View and interpret analysis results with interactive visualizations
+- **Design Code Verification**: Check structural elements against various design codes
+- **Project Settings**: Configure units, materials, and other project-specific settings
+
+## 🔧 Technology Stack
+
+### Frontend
+- **React 18** - Modern React with improved rendering and concurrent features
 - **Redux Toolkit** - State management with simplified Redux setup
+- **Vite** - Lightning-fast build tool and development server
 - **TailwindCSS** - Utility-first CSS framework with extensive customization
+- **Socket.io** - Real-time updates for analysis progress
+- **D3.js & Recharts** - Powerful data visualization
 - **React Router v6** - Declarative routing for React applications
-- **Data Visualization** - Integrated D3.js and Recharts for powerful data visualization
-- **Form Management** - React Hook Form for efficient form handling
-- **Animation** - Framer Motion for smooth UI animations
-- **Testing** - Jest and React Testing Library setup
+- **React Hook Form** - Efficient form handling
+- **Framer Motion** - Smooth UI animations
+
+### Backend
+- **Node.js** - JavaScript runtime for the server
+- **Express.js** - Web framework for Node.js
+- **MongoDB** - NoSQL database for storing project data
+- **Mongoose** - MongoDB object modeling for Node.js
+- **JWT** - JSON Web Tokens for authentication
+- **Socket.io** - Real-time bidirectional event-based communication
 
 ## 📋 Prerequisites
 
-- Node.js (v14.x or higher)
+- Node.js (v18.x or higher)
+- MongoDB (local or remote)
 - npm or yarn
 
 ## 🛠️ Installation
 
-1. Install dependencies:
+1. Install dependencies for both frontend and backend:
    ```bash
-   npm install
-   # or
-   yarn install
+   npm run install-all
    ```
-   
-2. Start the development server:
+
+2. Set up environment variables:
+   - Frontend `.env` file is already configured
+   - Backend `.env` file in the `backend` directory is already configured
+
+3. Start the development servers:
    ```bash
-   npm start
-   # or
-   yarn start
+   npm run dev
    ```
+
+   This will start both the frontend and backend servers concurrently.
+   - Frontend: http://localhost:3000
+   - Backend: http://localhost:5000
 
 ## 📁 Project Structure
 
 ```
-react_app/
-├── public/             # Static assets
-├── src/
-│   ├── components/     # Reusable UI components
-│   ├── pages/          # Page components
-│   ├── styles/         # Global styles and Tailwind configuration
-│   ├── App.jsx         # Main application component
-│   ├── Routes.jsx      # Application routes
-│   └── index.jsx       # Application entry point
-├── .env                # Environment variables
-├── index.html          # HTML template
-├── package.json        # Project dependencies and scripts
-├── tailwind.config.js  # Tailwind CSS configuration
-└── vite.config.js      # Vite configuration
+strumind/
+├── backend/             # Backend code
+│   ├── src/
+│   │   ├── config/      # Configuration files
+│   │   ├── controllers/ # API controllers
+│   │   ├── middleware/  # Express middleware
+│   │   ├── models/      # Mongoose models
+│   │   ├── routes/      # API routes
+│   │   ├── services/    # Business logic
+│   │   └── utils/       # Utility functions
+│   └── server.js        # Entry point
+├── public/              # Static files
+├── src/                 # Frontend code
+│   ├── components/      # Reusable components
+│   ├── pages/           # Page components
+│   ├── services/        # API services
+│   ├── store/           # Redux store
+│   │   └── slices/      # Redux slices
+│   ├── styles/          # CSS styles
+│   └── utils/           # Utility functions
+├── .env                 # Environment variables
+└── vite.config.js       # Vite configuration
 ```
-
-## 🧩 Adding Routes
-
-To add new routes to the application, update the `Routes.jsx` file:
-
-```jsx
-import { useRoutes } from "react-router-dom";
-import HomePage from "pages/HomePage";
-import AboutPage from "pages/AboutPage";
-
-const ProjectRoutes = () => {
-  let element = useRoutes([
-    { path: "/", element: <HomePage /> },
-    { path: "/about", element: <AboutPage /> },
-    // Add more routes as needed
-  ]);
-
-  return element;
-};
-```
-
-## 🎨 Styling
-
-This project uses Tailwind CSS for styling. The configuration includes:
-
-- Forms plugin for form styling
-- Typography plugin for text styling
-- Aspect ratio plugin for responsive elements
-- Container queries for component-specific responsive design
-- Fluid typography for responsive text
-- Animation utilities
 
 ## 📱 Responsive Design
 
-The app is built with responsive design using Tailwind CSS breakpoints.
-
+The application is built with responsive design using Tailwind CSS breakpoints, ensuring a great user experience on devices of all sizes.
 
 ## 📦 Deployment
 
@@ -98,10 +98,13 @@ Build the application for production:
 npm run build
 ```
 
+This will create optimized builds for both frontend and backend.
+
 ## 🙏 Acknowledgments
 
-- Built with [Rocket.new](https://rocket.new)
-- Powered by React and Vite
+- StaadPro for inspiration
+- Built with modern web technologies
+- Powered by React, Node.js, and MongoDB
 - Styled with Tailwind CSS
 
-Built with ❤️ on Rocket.new
+Built with ❤️ for structural engineers
